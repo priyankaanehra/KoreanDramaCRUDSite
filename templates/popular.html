@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}  
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'popular.js') }}"></script>
+
+    <script>
+        let top3 = {{top3|tojson}} 
+        console.log(top3)
+    </script>
+
+        <div class="container">
+            <div class="inner">
+                <div class="row">
+                    <div class="col-12 mainpic">
+                        <h3 class="titlee">Best K-Dramas to Stream in 2022</h3>
+                        <img src= "https://koreanbinge.files.wordpress.com/2022/01/february2022kdramas.jpg" alt="Home Page Kdramas 2022" id="home"> 
+                    </div>
+                </div>
+                <div class="color_words centeritems line">
+                    Whether you’re a die-hard K-drama fan, or you’re a pop culture connoisseur looking to explore and educate, you are in the right place. 
+                </div>
+                <br>
+                <div>
+                    <div id="newTop"></div>
+                </div>
+            
+
+            </div>
+        </div>
+
+{% endblock %}

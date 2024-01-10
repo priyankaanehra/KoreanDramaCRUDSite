@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block content %}  
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'edit.js') }}"></script>
+
+    <script>
+        let drama = {{drama|tojson}} 
+    </script>
+
+<div class="container box">
+    <div>
+        Edit Drama Information Below:
+    </div><br>
+
+        <label for="titleinput">Drama Title</label>
+        <input type="text" class="form-control" id="titleinput" placeholder="Title">
+        <div class="warningtitle red"></div>
+
+        <label for="genres">Genres(If more than one, seperate with comma)</label>
+        <input type="text" class="form-control" id="genres" placeholder="Genres">
+        <div class="warninggenres red"></div>
+
+        <label for="ImageURL">Image URL</label>
+        <input type="text" class="form-control" id="ImageURL" placeholder="Image URL">
+        <div class="warningimg red"></div>
+     
+        <label for="trailer">Trailer URL</label>
+        <input type="text" class="form-control" id="trailer" placeholder="Trailer URL">
+        <div class="warningtrailer red"></div>
+
+        <label for="synopsis">Synopsis</label>
+        <textarea type="text" class="form-control" id="synopsis" placeholder="Synopsis"></textarea>
+        <div class="warningsynopsis red"></div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label for="rating">IMDB rating out of 10</label>
+                <input type="text" class="form-control" id="rating" placeholder="Rating">
+                <div class="warningrating red"></div>
+            </div>
+            <div class="col-md-6">
+                <label for="episodes">Number of episodes</label>
+                <input type="text" class="form-control" id="episodes" placeholder="# episodes">
+                <div class="warningepisodes red"></div>
+            </div>
+        </div>
+
+        <label for="actors">Main Actors(If more than one, seperate with comma)</label>
+        <input type="text" class="form-control" id="actors" placeholder="Main Actors">
+        <div class="warningactors red"></div>
+
+        <label for="director">Director(If more than one, seperate with comma)</label>
+        <input type="text" class="form-control" id="director" placeholder="Director(s)">
+        <div class="warningdirector red"></div>
+
+        
+        
+        
+        <div class="d-inline-block">
+            <br> <button type="submit" class="btn btn-primary editbut">Submit</button>
+
+            <input type="button" id="btnOpenDialog" value="Discard" class="btn btn-primary discardbut">
+            <div id="dialog-confirm"></div>
+        </div>
+
+        
+  </div>
+
+{% endblock %}  
